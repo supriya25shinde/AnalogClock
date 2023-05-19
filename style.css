@@ -1,0 +1,91 @@
+*, *::after, *::before {
+    box-sizing: border-box;
+    font-family: Gotham Rounded, sans-serif;
+  }
+  
+  body {
+    background: linear-gradient(to right, hwb(94 0% 94%), hsla(0, 0%, 8%, 0.904));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow: hidden;
+  }
+  
+  .clock {
+    width: 300px;
+    height: 300px;
+    background-color: rgba(231, 116, 22, 0.8);
+    background-image: url("");
+    border-radius: 50%;
+    border: 2px solid black;
+    position: relative;
+  }
+  
+  .clock .number {
+    --rotation: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transform: rotate(var(--rotation));
+    font-size: 2rem;
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; font-weight: bold;
+  }
+  
+  .clock .number1 { --rotation: 30deg; font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif ; font-weight: bold; }
+  .clock .number2 { --rotation: 60deg; font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif ; font-weight: bold;}
+  .clock .number3 { --rotation: 90deg;font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; font-weight: bold; }
+  .clock .number4 { --rotation: 120deg;font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; font-weight: bold; }
+  .clock .number5 { --rotation: 150deg; font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; font-weight: bold;}
+  .clock .number6 { --rotation: 180deg;font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; font-weight: bold; }
+  .clock .number7 { --rotation: 210deg;font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif ; font-weight: bold; }
+  .clock .number8 { --rotation: 240deg;font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif ; font-weight: bold; }
+  .clock .number9 { --rotation: 270deg; font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; font-weight: bold;}
+  .clock .number10 { --rotation: 300deg;font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; font-weight: bold; }
+  .clock .number11 { --rotation: 330deg; font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif ; font-weight: bold;}
+  
+  
+  .clock .hand {
+    --rotation: 0;
+    position: absolute;
+    bottom: 50%;
+    left: 50%;
+    border: 1px solid white;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    transform-origin: bottom;
+    z-index: 20;
+    transform: translateX(-50%) rotate(calc(var(--rotation) * 1deg));
+  }
+  
+  .clock::after {
+    content: '';
+    position: absolute;
+    background-color: black;
+    z-index: 11;
+    width: 15px;
+    height: 15px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+  }
+  
+  .clock .hand.second {
+    width: 3px;
+    height: 45%;
+    background-color: rgb(227, 243, 8);
+  }
+  
+  .clock .hand.minute {
+    width: 7px;
+    height: 40%;
+    background-color: rgb(228, 224, 6);
+  }
+  
+  .clock .hand.hour {
+    width: 10px;
+    height: 35%;
+    background-color: rgb(222, 238, 6);
+  }
